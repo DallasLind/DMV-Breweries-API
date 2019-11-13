@@ -19,7 +19,7 @@ const breweriesData = breweriesJSON.map(item => {
 
 Breweries.deleteMany({})
     .then(() => {
-        breweries.create(breweriesData)
+        Breweries.create(breweriesData)
             .then(breweries => {
                 console.log(breweries)
                 process.exit();

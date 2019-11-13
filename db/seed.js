@@ -1,4 +1,4 @@
-const breweriesJSON = require("../models/breweries.json");
+const breweriesJSON = require("./breweries");
 const Breweries = require("../models/breweries");
 
 const breweriesData = breweriesJSON.map(item => {

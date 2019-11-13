@@ -1,10 +1,4 @@
 const mongoose = require("mongoose");
-
-//Gotta figure out connect
-mongoose.connect('mongodb://localhost/breweries', { useNewUrlParser: true })
-.then(() => {
-    console.log("Connected to the brewery db!")
-})
-
+mongoose.connect("mongodb://localhost/dmv-breweries-api", { useUnifiedTopology: true, useNewUrlParser: true });
 
 module.exports = mongoose;

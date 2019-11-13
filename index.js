@@ -1,10 +1,13 @@
-const app = express();
 const express = require("express");
+const app = express();
 const mongoose = require("mongoose")
 const parser = require("body-parser");
 const Breweries = require("./models/breweries");
+const http = require('http');
 
+app.use(parser.urlencoded({ extended: false }));
 app.use(parser.json());
+
 
 app.post("/breweries", function (req, res){
     Breweries.create(req.body).then(breweries => {
@@ -12,7 +15,7 @@ app.post("/breweries", function (req, res){
     })
 })
 
-app.get("/breweries", function (req, res) {
+app.get("/", function (req, res) {
     Breweries.find({}).then(breweries => {
         res.json(breweries);
     })
@@ -86,7 +89,7 @@ app.get("/breweries/websiteUrl/:websiteUrl", function(req, res) {
 
 app.get('/:name', (req, res) => {
   Breweries.find({ name: req.params.name }).then(result => {
-    res.json(breweries);
+    res.json(result);
   });
 });
 

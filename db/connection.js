@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/dmv-breweries-api", { useUnifiedTopology: true, useNewUrlParser: true });
 
 let mongoURI = "";
 if (process.env.NODE_ENV === "production") {
@@ -7,5 +6,8 @@ if (process.env.NODE_ENV === "production") {
   } else {
     mongoURI = "mongodb://localhost/dmv-breweries-api";
   }
+
+mongoose.connect("mongodb://localhost/dmv-breweries-api", { useUnifiedTopology: true, useNewUrlParser: true });
+
 
 module.exports = mongoose;

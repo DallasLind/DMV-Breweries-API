@@ -40,6 +40,10 @@ GET | `/breweries/websiteUrl/:websiteUrl` | Find by Website URL |     |
 GET | `/breweries/{name}/edit` | Find an object by name and edit it |    |
 DELETE | `/breweries/{name}` | Find object by name and delete |      |
 
+
+### Build Status
+![](https://img.shields.io/badge/BUILD-IN%20PROGRESS-informational)
+
 ### Technologies Used
 * Mongoose
 * MongoDB

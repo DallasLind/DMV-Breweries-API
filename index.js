@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose")
 const parser = require("body-parser");
-const Breweries = require("./models/Breweries");
+const Breweries = require("./models/breweries");
 
 mongoose.set('useFindAndModify', false);
 app.use(parser.urlencoded({ extended: false }));
@@ -109,7 +109,7 @@ app.delete("/breweries/:name", function(req, res) {
     })
 })
 
-app.set("port", process.env.PORT || 8080);
+app.set("port", process.env.PORT || 5000);
 
 app.listen(app.get("port"), () => {
   console.log(`✅ PORT: ${app.get("port")} 🌟`);

@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose")
 const parser = require("body-parser");
-const Breweries = require("./models/breweries");
+const Breweries = require("./models/Breweries");
 
 mongoose.set('useFindAndModify', false);
 app.use(parser.urlencoded({ extended: false }));

@@ -93,6 +93,16 @@ app.get('/:name', (req, res) => {
   });
 });
 
+app.get("/breweries/:name/edit", function(req, res) {
+  Breweries.findOneAndUpdate(
+      {name: req.params.name},
+      { $set: {breweryType: req.body.breweryType}},
+      {new: true}
+  ).then(breweries => {
+      res.json(breweries);
+  });
+});
+
 app.delete("/breweries/:name", function(req, res) {
     Breweries.findOneAndDelete({ name: req.body.name }).then(breweries => {
         res.json(breweries);

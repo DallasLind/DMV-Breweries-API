@@ -15,7 +15,7 @@ app.post("/breweries", function (req, res) {
     })
 })
 
-app.get("/breweries", function (req, res) {
+app.get("/", function (req, res) {
   Breweries.find({}).then(breweries => {
     res.json(breweries);
   })
